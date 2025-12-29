@@ -4,6 +4,8 @@ import VissionMission from "../components/VissionMission";
 import ContactForm from "../components/ContactForm";
 
 export default function Home() {
+  // ---- subsidiaries card data ----
+
   const subsidiariesData = [
     {
       id: 0,
@@ -38,8 +40,13 @@ export default function Home() {
         "A trusted workforce and HR solutions partner delivering skilled manpower and training across key industries.",
     },
   ];
+
+  // ---- main comp ----
+
   return (
-    <div>
+    <div className="cont-px">
+      {/* ---- hero ---- */}
+
       <section className="hero">
         <div className="hero-heading">
           <p>
@@ -49,23 +56,18 @@ export default function Home() {
             Sustainable <span>Growth.</span>
           </p>
         </div>
-        <p className="text-sm min-[480px]:text-base min-[800px]:text-xl w-full max-w-[60ch] mt-8 xl:mt-10 mb-10 xl:mb-12 leading-[150%]">
+        <p className="heroPara w-full max-w-[60ch] mt-8 xl:mt-10 mb-10 xl:mb-12 ">
           DALA Holding is a Saudi Arabian investment and holding company driving
           long-term value through strategic partnerships, joint ventures, and
           responsible investment across high-impact sectors.
         </p>
-        <Link
-          to="/contact"
-          className="max-w-70 buttonStyle "
-        >
+        <Link to="/contact" className="max-w-70 buttonStyle ">
           <img
             src="./icons/hand-stars-icon.svg"
             alt="an icon of hand with stars"
             className="size-5 sm:size-6"
           />
-          <span>
-            Partner With Us
-          </span>
+          <span>Partner With Us</span>
         </Link>
         <p className="font-bold italic text-xs sm:text-sm mt-4">
           Aligned with{" "}
@@ -78,7 +80,9 @@ export default function Home() {
         </p>
       </section>
 
-      <section className="py-20 cont-px ">
+      {/* ---- Subsidiaries cards ---- */}
+
+      <section className="py-20">
         <h2 className="subHeading">Subsidiaries & Business Partners</h2>
         <p className="contentPara max-w-[130ch] mt-8 mb-12">
           DALA Holding’s portfolio brings together strategic partnerships and
@@ -87,7 +91,7 @@ export default function Home() {
           our commitment to combining global expertise with regional opportunity
           in support of Saudi Arabia’s Vision 2030.
         </p>
-        <div className="flex flex-wrap rounded-2xl w-fit mx-auto gap-y-10 justify-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gridStyle w-fit mx-auto gap-y-10 justify-center my-20 ">
           {subsidiariesData.map((item) => (
             <SubsidiariesCard
               item={item}
@@ -98,9 +102,13 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ---- Vission & Mission ---- */}
+
       <VissionMission />
 
-      <section className="imgTextSec mb-8 xl:mb-20">
+      {/* ---- Contact Form ---- */}
+
+      <section className="imgTextSec">
         <div className="lg:max-w-110 2xl:max-w-2xl w-full">
           <h2 className="subHeading mb-8">Contact Us</h2>
           <ContactForm />

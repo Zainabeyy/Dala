@@ -5,7 +5,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="cont-px">
+    <nav className="cont-px bg-white">
       <div className="cont-px py-7 flex items-center justify-between">
         {/* Logo */}
         <Link to="/">

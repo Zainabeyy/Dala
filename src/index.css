@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "./assets/fonts/stylesheet.css";
 
 @theme {
   --color-blue-dark: #00315c;
@@ -7,40 +8,8 @@
   --breakpoint-xs: 30rem;
 }
 
-@font-face {
-  font-family: "proxima-nova";
-  src: url("./assets/Fonts/Proxima-Nova-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "proxima-nova";
-  src: url("./assets/Fonts/Proxima-Nova-Semibold.ttf") format("truetype");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "proxima-nova";
-  src: url("./assets/Fonts/proximanova-bold.otf") format("opentype");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "proxima-nova";
-  src: url("./assets/Fonts/Proxima-Nova-Extrabold.ttf") format("truetype");
-  font-weight: 800;
-  font-style: normal;
-  font-display: swap;
-}
-
 @utility cont-px {
-  @apply px-4 sm:px-10 md:px-20 xl:px-28;
+  @apply px-4 sm:px-10 lg:px-20 2xl:px-28;
 }
 
 @utility boxShadow {
@@ -49,29 +18,34 @@
   -moz-box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.4);
 }
 
-@utility blueGradient{
-@apply bg-linear-to-r from-blue-dark to-blue-sharp;
+@utility blueGradient {
+  @apply bg-linear-to-r from-blue-dark to-blue-sharp;
 }
 
-@utility textGradient{
+@utility textGradient {
   @apply blueGradient  text-transparent bg-clip-text;
 }
 
 @layer base {
   body {
-    font-family: proxima-nova, sans-serif;
-    @apply text-blue-dark;
+    font-family: Proxima Nova, sans-serif;
+    @apply text-blue-dark min-h-screen leading-[100%] tracking-[0%];
+  }
+  section {
+    @apply cont-px;
   }
 }
 
 @layer utility {
-
-  .buttonStyle{
-    @apply font-semibold text-white uppercase text-sm sm:text-base blueGradient flex justify-center items-center rounded-xl py-4 gap-x-2;
+  .buttonStyle {
+    @apply font-semibold text-white uppercase text-sm sm:text-base blueGradient flex justify-center items-center rounded-xl py-4 gap-x-2 active:bg-blue-dark;
+  }
+  .heroPara {
+    @apply text-sm min-[480px]:text-base min-[800px]:text-xl leading-[150%];
   }
 
   .hero {
-    @apply bg-[url('bg-img.webp')] bg-cover bg-center rounded-4xl cont-px py-16 xl:py-18;
+    @apply bg-[url('bg-img.webp')] bg-cover bg-center rounded-4xl py-16 xl:py-18;
   }
   .hero-heading {
     @apply text-3xl xs:text-4xl md:text-[3.375rem] xl:text-6xl font-extrabold;
@@ -80,27 +54,86 @@
     @apply text-blue-sharp italic;
   }
 
-  .subHeading{
+  .h1Heading {
+    @apply font-extrabold text-[2rem] min-[450px]:text-5xl sm:text-6xl lg:text-[4rem] 2xl:text-7xl;
+  }
+
+  .subHeading {
     @apply w-fit textGradient font-extrabold uppercase text-[2rem] xl:text-4xl;
   }
 
-  .contentPara{
-    @apply text-base 2xl:text-lg font-normal leading-[150%]
+  .contentPara {
+    @apply text-sm sm:text-base 2xl:text-lg font-normal leading-[150%];
   }
 
   .blueCard {
-    @apply  flex items-center justify-center rounded-bl-2xl rounded-br-2xl shadow-2xl max-w-52 min-w-27.5 max-h-30 min-h-24.5 w-full h-full absolute -top-1.25 -translate-x-1/2  left-1/2 boxShadow ;
+    @apply flex items-center justify-center rounded-bl-2xl rounded-br-2xl shadow-2xl w-46 h-24.5 absolute -top-1.25 boxShadow;
   }
   .overlayBox {
-    @apply w-6.75 h-71.25 bg-linear-to-br from-black to-black/0 absolute top-0 left-0 mix-blend-overlay;
+    @apply w-6.75 h-71.25 bg-linear-to-br from-black to-black/0 hidden sm:block absolute top-0 left-0 mix-blend-overlay;
   }
 
-  .imgTextSec{
-    @apply cont-px flex flex-wrap justify-center lg:flex-nowrap lg:justify-between items-center gap-12 mb-20;
+  .imgTextSec {
+    @apply flex flex-wrap justify-center lg:flex-nowrap lg:justify-between items-center gap-12 mb-20 2xl:mb-28;
   }
 
   .contactForm input,
-  .contactForm textarea{
-    @apply bg-blue-light rounded-lg px-6 py-5 placeholder:text-black/25 w-full
+  .contactForm textarea {
+    @apply bg-blue-light rounded-lg px-6 py-5 placeholder:text-black/25 w-full;
+  }
+
+}
+
+/* ---- grid styling ---- */
+
+.gridStyle > * {
+  @apply rounded-2xl;
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .gridStyle > * {
+    @apply rounded-none;
+  }
+  .gridStyle > :nth-child(2n + 1) {
+    @apply rounded-tl-2xl rounded-bl-2xl;
+  }
+  .gridStyle > :nth-child(2n) {
+    @apply rounded-tr-2xl rounded-br-2xl;
+  }
+  .gridStyle > :nth-child(2n + 1) .overlayBox {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .gridStyle > * {
+    @apply rounded-none;
+  }
+  .gridStyle > :nth-child(3n + 1) {
+    @apply rounded-tl-2xl rounded-bl-2xl;
+  }
+  .gridStyle > :nth-child(3n) {
+    @apply rounded-tr-2xl rounded-br-2xl;
+  }
+  .gridStyle > :last-child {
+    @apply rounded-tr-2xl rounded-br-2xl;
+  }
+  .gridStyle > :nth-child(3n + 1) .overlayBox {
+    display: none;
+  }
+}
+
+@media (min-width: 1280px) {
+  .gridStyle > * {
+    @apply rounded-none;
+  }
+  .gridStyle > :nth-child(4n + 1) {
+    @apply rounded-tl-2xl rounded-bl-2xl;
+  }
+  .gridStyle > :nth-child(4n) {
+    @apply rounded-tr-2xl rounded-br-2xl;
+  }
+  .gridStyle > :nth-child(4n + 1) > .overlayBox {
+    display: none;
   }
 }

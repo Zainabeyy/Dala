@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <section className="bg-blue-light cont-px py-10">
+    <section className="bg-blue-light py-10 mt-20">
       <div className="cont-px flex flex-col min-[995px]:flex-row justify-between gap-14">
         <div className="flex-1">
           <img src="logo.svg" alt="Dala logo" className="h-auto w-30" />
