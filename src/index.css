@@ -1,5 +1,6 @@
 @import "tailwindcss";
-@import "./assets/fonts/stylesheet.css";
+@import "./styles/fonts.css";
+@import "./styles/utilities.css";
 
 @theme {
   --color-blue-dark: #00315c;
@@ -8,83 +9,61 @@
   --breakpoint-xs: 30rem;
 }
 
-@utility cont-px {
-  @apply px-4 sm:px-10 lg:px-20 2xl:px-28;
+:focus-visible {
+  @apply outline-none ring-2 ring-blue-sharp rounded-sm ring-offset-2;
 }
 
-@utility boxShadow {
-  box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.4);
-  -webkit-box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.4);
-  -moz-box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.4);
+:focus:not(:focus-visible) {
+  outline: none;
 }
 
-@utility blueGradient {
-  @apply bg-linear-to-r from-blue-dark to-blue-sharp;
-}
-
-@utility textGradient {
-  @apply blueGradient  text-transparent bg-clip-text;
-}
 
 @layer base {
   body {
     font-family: Proxima Nova, sans-serif;
-    @apply text-blue-dark min-h-screen leading-[100%] tracking-[0%];
+    @apply text-blue-dark min-h-screen tracking-[0%];
   }
   section {
     @apply cont-px;
   }
+  input,
+  textarea {
+    @apply bg-blue-light rounded-lg px-6 py-5 placeholder:text-black/25 w-full focus:outline-1 outline-blue-sharp hover:outline-1;
+  }
 }
 
-@layer utility {
-  .buttonStyle {
-    @apply font-semibold text-white uppercase text-sm sm:text-base blueGradient flex justify-center items-center rounded-xl py-4 gap-x-2 active:bg-blue-dark;
-  }
-  .heroPara {
-    @apply text-sm min-[480px]:text-base min-[800px]:text-xl leading-[150%];
-  }
-
-  .hero {
-    @apply bg-[url('bg-img.webp')] bg-cover bg-center rounded-4xl py-16 xl:py-18;
-  }
-  .hero-heading {
-    @apply text-3xl xs:text-4xl md:text-[3.375rem] xl:text-6xl font-extrabold;
-  }
-  .hero-heading p span {
-    @apply text-blue-sharp italic;
-  }
-
-  .h1Heading {
-    @apply font-extrabold text-[2rem] min-[450px]:text-5xl sm:text-6xl lg:text-[4rem] 2xl:text-7xl;
-  }
-
-  .subHeading {
-    @apply w-fit textGradient font-extrabold uppercase text-[2rem] xl:text-4xl;
-  }
-
-  .contentPara {
-    @apply text-sm sm:text-base 2xl:text-lg font-normal leading-[150%];
-  }
-
-  .blueCard {
-    @apply flex items-center justify-center rounded-bl-2xl rounded-br-2xl shadow-2xl w-46 h-24.5 absolute -top-1.25 boxShadow;
-  }
-  .overlayBox {
-    @apply w-6.75 h-71.25 bg-linear-to-br from-black to-black/0 hidden sm:block absolute top-0 left-0 mix-blend-overlay;
-  }
-
-  .imgTextSec {
-    @apply flex flex-wrap justify-center lg:flex-nowrap lg:justify-between items-center gap-12 mb-20 2xl:mb-28;
-  }
-
-  .contactForm input,
-  .contactForm textarea {
-    @apply bg-blue-light rounded-lg px-6 py-5 placeholder:text-black/25 w-full;
-  }
-
+.buttonStyle {
+  @apply font-semibold text-white uppercase text-xs md:text-base blueGradient flex justify-center items-center rounded-xl py-3 md:py-4 gap-x-2 transition-all duration-300;
+}
+.buttonStyle:hover,
+.buttonStyle:active {
+  @apply from-blue-dark to-blue-dark;
 }
 
-/* ---- grid styling ---- */
+.navLinkActive > div {
+  @apply w-full;
+}
+
+.hero {
+  @apply bg-[url('bg-img.webp')] bg-cover bg-center rounded-4xl py-16 xl:py-18 2xl:py-20;
+}
+.heroHomeHeading p span {
+  @apply text-blue-sharp italic;
+}
+
+.blueCard {
+  @apply flex items-center justify-center rounded-bl-2xl rounded-br-2xl shadow-2xl w-46 2xl:w-50 h-24.5 2xl:h-28 absolute -top-1.25 boxShadow;
+}
+.overlayBox {
+  @apply w-6.75 h-71.25 2xl:h-74 bg-linear-to-br from-black to-black/0 hidden sm:block absolute top-0 left-0 mix-blend-overlay;
+}
+
+.imgTextSec {
+  @apply flex flex-wrap justify-center lg:flex-nowrap lg:justify-between items-center gap-12 mb-20 2xl:mb-28;
+}
+
+
+/* ---- Subsidiaries Card grid styling ---- */
 
 .gridStyle > * {
   @apply rounded-2xl;

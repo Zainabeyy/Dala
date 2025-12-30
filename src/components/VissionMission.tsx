@@ -5,7 +5,7 @@ export default function VissionMission() {
     <div>
       <section className="imgTextSec">
         <div className="lg:max-w-110 2xl:max-w-3xl">
-          <h2 className="subHeading mb-8 2xl:mb-14">Vision</h2>
+          <h2 className="gradHeading mb-8 2xl:mb-14">Vision</h2>
           <div className="contentPara space-y-6">
             <p>
               To be the leading Saudi holding company that bridges global
@@ -30,7 +30,7 @@ export default function VissionMission() {
 
       <section className="imgTextSec">
         <div className="lg:max-w-110 2xl:max-w-3xl lg:order-2">
-          <h2 className="subHeading mb-8 2xl:mb-14">Mission</h2>
+          <h2 className="gradHeading mb-8 2xl:mb-14">Mission</h2>
           <div className="contentPara space-y-6">
             <p>
               At DALA Holding, our mission is to create long-term value through

@@ -14,8 +14,8 @@ export default function About() {
       {/* ---- hero ----- */}
       <section className="flex flex-col md:flex-row items-start mt-16 w-full justify-between gap-10">
         <div className="max-w-150 2xl:max-w-3xl w-full">
-          <h1 className="h1Heading uppercase">Who we are</h1>
-          <div className="lg:text-xl">
+          <h1 className="heroHeading uppercase">Who we are</h1>
+          <div className="lg:text-xl heroPara">
             <p className="mt-10 mb-6">
               DALA Holding is a Saudi Arabian investment and holding company
               established to drive sustainable value creation through strategic
@@ -41,7 +41,7 @@ export default function About() {
       </section>
 
       <section className="mt-20">
-        <h2 className="subHeading mb-10">Leadership</h2>
+        <h2 className="gradHeading mb-10">Leadership</h2>
         <div className="bg-blue-light rounded-3xl overflow-hidden flex flex-col md:flex-row md:h-110.5 xl:h-85.5 ">
           <div className="md:h-110.5 xl:h-85.5 xl:w-76.5 min-w-60 h-60 overflow-hidden shrink xl:shrink-0">
             <picture>
@@ -103,7 +103,7 @@ export default function About() {
       <VissionMission />
 
       <section>
-        <h2 className="subHeading">
+        <h2 className="gradHeading">
           Core Values
         </h2>
         <CoreValues />

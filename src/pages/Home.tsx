@@ -48,7 +48,7 @@ export default function Home() {
       {/* ---- hero ---- */}
 
       <section className="hero">
-        <div className="hero-heading">
+        <div className="heroHeading heroHomeHeading">
           <p>
             Strategic <span>Partnerships.</span>
           </p>
@@ -56,20 +56,20 @@ export default function Home() {
             Sustainable <span>Growth.</span>
           </p>
         </div>
-        <p className="heroPara w-full max-w-[60ch] mt-8 xl:mt-10 mb-10 xl:mb-12 ">
+        <p className="heroPara w-full max-w-[60ch] mt-8 xl:mt-10 mb-10 xl:mb-12 2xl:mt-12 2xl:mb-14">
           DALA Holding is a Saudi Arabian investment and holding company driving
           long-term value through strategic partnerships, joint ventures, and
           responsible investment across high-impact sectors.
         </p>
-        <Link to="/contact" className="max-w-70 buttonStyle ">
+        <Link to="/contact" className="max-w-50 md:max-w-70 buttonStyle">
           <img
             src="./icons/hand-stars-icon.svg"
             alt="an icon of hand with stars"
-            className="size-5 sm:size-6"
+            className="size-5 md:size-6"
           />
           <span>Partner With Us</span>
         </Link>
-        <p className="font-bold italic text-xs sm:text-sm mt-4">
+        <p className="font-bold italic text-xs md:text-sm 2xl:text-[15px] mt-4 2xl:mt-6">
           Aligned with{" "}
           <a
             href="https://www.vision2030.gov.sa/en"
@@ -83,7 +83,7 @@ export default function Home() {
       {/* ---- Subsidiaries cards ---- */}
 
       <section className="py-20">
-        <h2 className="subHeading">Subsidiaries & Business Partners</h2>
+        <h2 className="gradHeading">Subsidiaries & Business Partners</h2>
         <p className="contentPara max-w-[130ch] mt-8 mb-12">
           DALA Holding’s portfolio brings together strategic partnerships and
           subsidiaries that drive sustainable growth, innovation, and
@@ -110,7 +110,7 @@ export default function Home() {
 
       <section className="imgTextSec">
         <div className="lg:max-w-110 2xl:max-w-2xl w-full">
-          <h2 className="subHeading mb-8">Contact Us</h2>
+          <h2 className="gradHeading mb-8">Contact Us</h2>
           <ContactForm />
         </div>
         <img

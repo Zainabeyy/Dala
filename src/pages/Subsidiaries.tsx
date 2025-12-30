@@ -51,10 +51,8 @@ export default function Subsidiaries() {
       />
       <section className="pt-16 flex flex-col items-center justify-center">
         <div className="max-w-214 2xl:max-w-270 text-center">
-          <h1 className="h1Heading">
-            Subsidiaries & Strategic Partners
-          </h1>
-          <p className="heroPara mt-8 mb-20 2xl:mb-24 2xl:mt-14 2xl:text-2xl">
+          <h1 className="heroHeading">Subsidiaries & Strategic Partners</h1>
+          <p className="heroPara mt-8 mb-20 2xl:mb-24 2xl:mt-14">
             DALA Holding’s portfolio brings together subsidiaries and strategic
             partners that operate across high-impact sectors essential to Saudi
             Arabia’s economic development. Each entity reflects our
@@ -108,7 +106,7 @@ export default function Subsidiaries() {
       {/* ---- core values ---- */}
 
       <section>
-        <h2 className="subHeading">
+        <h2 className="gradHeading">
           Investment Philosophy & Strategic Approach
         </h2>
         <CoreValues />

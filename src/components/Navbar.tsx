@@ -1,30 +1,51 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const navData = [
+    {
+      title: "Subsidiaries",
+      link: "/subsidiaries",
+    },
+    {
+      title: "About Us",
+      link: "/about",
+    },
+    {
+      title: "Contact Us",
+      link: "/contact",
+    },
+  ];
 
   return (
     <nav className="cont-px bg-white">
       <div className="cont-px py-7 flex items-center justify-between">
         {/* Logo */}
-        <Link to="/">
+        <NavLink to="/">
           <img
             src="logo.svg"
             alt="Dala logo"
-            className="h-auto max-w-16 sm:max-w-18"
+            className="h-auto max-w-16 sm:max-w-18 hover:scale-104 transition-all duration-200"
           />
-        </Link>
+        </NavLink>
 
         {/* Desktop Menu */}
         <div className="hidden w-full min-[30rem]:flex justify-center font-bold uppercase text-xs sm:text-sm gap-x-8 xl:gap-x-14">
-          <Link to="/subsidiaries">Subsidiaries</Link>
-          <Link to="/about" className="whitespace-nowrap">
-            About Us
-          </Link>
-          <Link to="/contact" className="whitespace-nowrap">
-            Contact Us
-          </Link>
+          {navData.map((item, index) => (
+            <NavLink
+              to={item.link}
+              key={index}
+              className={({ isActive }) =>
+                `navLink ${
+                  isActive ? "navLinkActive" : ""
+                } whitespace-nowrap group`
+              }
+            >
+              {item.title}
+              <div className="h-0.5 blueGradient w-0 group-hover:w-full transition-all duration-300" />
+            </NavLink>
+          ))}
         </div>
 
         {/* Mobile Hamburger */}
@@ -46,17 +67,26 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         {open && (
-          <div className="absolute top-14 left-0 w-full bg-white shadow-md xs:hidden">
+          <div
+            className={`absolute top-14 left-0 w-full bg-white shadow-xl xs:hidden z-100 transition-all duration-300 ${
+              open ? "max-h-39" : "max-h-0"
+            }`}
+          >
             <div className="flex flex-col items-center font-bold uppercase text-sm py-6 gap-y-6">
-              <Link to="/subsidiaries" onClick={() => setOpen(false)}>
-                Subsidiaries
-              </Link>
-              <Link to="/about" onClick={() => setOpen(false)}>
-                About Us
-              </Link>
-              <Link to="/contact" onClick={() => setOpen(false)}>
-                Contact Us
-              </Link>
+              {navData.map((item, index) => (
+                <NavLink
+                  key={index}
+                  to={item.link}
+                  className={({ isActive }) =>
+                    `navLink ${
+                      isActive ? "textGradient" : "text-blue-dark"
+                    } whitespace-nowrap group`
+                  }
+                  onClick={() => setOpen(false)}
+                >
+                  {item.title}
+                </NavLink>
+              ))}
             </div>
           </div>
         )}
