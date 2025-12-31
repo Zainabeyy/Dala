@@ -84,17 +84,28 @@ export default function Subsidiaries() {
                 <p className="contentPara my-5">{card.description}</p>
                 <a
                   href={card.link}
-                  className="block p-0.5 rounded-lg max-w-40 blueGradient"
+                  target="_blank"
+                  className="block  blueGradient rounded-lg overflow-hidden max-w-40 group"
                 >
-                  <div className="flex justify-center items-center gap-1 py-2 rounded-md w-full bg-white">
-                    <img
-                      src="./icons/visit.svg"
-                      alt="arrow right icon"
-                      className="h-auto w-6"
-                    />
-                    <span className="textGradient uppercase text-xs font-semibold">
-                      Visit their site
-                    </span>
+                  <div className="bg-transparent group-hover:bg-blue-deep group-active:bg-blue-deep p-0.5 transition-all duration-200">
+                    <div className="flex justify-center items-center gap-1 py-2 rounded-md w-full bg-white group-hover:bg-gray-light group-active:bg-gray-light transition-all duration-200">
+                      <img
+                        src="./icons/visit.svg"
+                        alt="arrow right icon"
+                        className="h-auto w-6"
+                      />
+                      <span
+                        className="relative textGradient uppercase text-xs font-semibold transition-all duration-200 after:absolute after:left-0 after:-bottom-px after:h-px after:w-full after:bg-blue-sharp
+                      group-hover:after:bg-blue-deep
+                      group-active:after:bg-blue-deep
+                      group-hover:text-blue-deep
+                      group-active:text-blue-deep
+                      after:transition-all
+                      after:duration-300"
+                      >
+                        Visit their site
+                      </span>
+                    </div>
                   </div>
                 </a>
               </div>

@@ -61,14 +61,16 @@ export default function Home() {
           long-term value through strategic partnerships, joint ventures, and
           responsible investment across high-impact sectors.
         </p>
-        <Link to="/contact" className="max-w-50 md:max-w-70 buttonStyle">
-          <img
-            src="./icons/hand-stars-icon.svg"
-            alt="an icon of hand with stars"
-            className="size-5 md:size-6"
-          />
-          <span>Partner With Us</span>
-        </Link>
+        <div className="gradButton group">
+          <Link to="/contact" className="w-full buttonStyle">
+            <img
+              src="./icons/hand-stars-icon.svg"
+              alt="an icon of hand with stars"
+              className="size-5 md:size-6"
+            />
+            <span>Partner With Us</span>
+          </Link>
+        </div>
         <p className="font-bold italic text-xs md:text-sm 2xl:text-[15px] mt-4 2xl:mt-6">
           Aligned with{" "}
           <a

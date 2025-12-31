@@ -1,55 +1,58 @@
-// import emailjs from "@emailjs/browser";
-
 export default function ContactForm() {
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const formEl = event.currentTarget;
-    console.log(formEl)
 
-    // emailjs
-    //   .sendForm(
-    //     "service_jc0d6qd",
-    //     "template_39r9uap",
-    //     formEl,
-    //     "b-wzbRGsVs8-zx1pc"
-    //   )
-    //   .then(
-    //     () => {
-    //       console.log("SUCCESS!");
-    //       formEl.reset(); // reset the form
-    //     },
-    //     (error) => {
-    //       console.log("FAILED...", error.text);
-    //     }
-    //   );
+    const formData = new FormData(event.currentTarget);
+
+    // const data = {
+    //   name: formData.get("name"),
+    //   email: formData.get("email"),
+    //   inquiry: formData.get("inquiry"),
+    // };
+
+    // const res = await fetch("http://localhost:5000/contact", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify(data),
+    // });
+    // console.log("message sent");
+
+    // if (res.ok) {
+    //   alert("Message sent!");
+    //   event.currentTarget.reset();
+    // } else {
+    //   alert("Failed to send message");
+    // }
   }
 
   return (
-    <div>
-      <form
-        onSubmit={handleSubmit}
-        method="POST"
-        className="contactForm flex flex-col w-full min-w-75"
-      >
-        <input type="text" name="name" placeholder="Name" required />
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          className="my-2"
-          required
-        />
-        <textarea
-          name="Inquiry"
-          placeholder="Write message"
-          className="h-42.75 resize-none"
-          required
-        />
-        <button type="submit" className=" buttonStyle mt-6">
+    <form
+      onSubmit={handleSubmit}
+      method="POST"
+      className="flex flex-col w-full min-w-75"
+    >
+      <input type="text" name="name" placeholder="Name" required />
+      <input
+        type="email"
+        name="email"
+        placeholder="Email"
+        className="my-2"
+        required
+      />
+      <textarea
+        name="inquiry"
+        placeholder="Write message"
+        className="h-42.75 resize-none"
+        required
+      />
+      <div className="gradButton mt-6 group">
+        <button type="submit" className="w-full buttonStyle">
           <img src="./icons/send.svg" alt="send icon" className="size-6" />
           <span>Send Inquiry</span>
         </button>
-      </form>
-    </div>
+      </div>
+    </form>
   );
 }
