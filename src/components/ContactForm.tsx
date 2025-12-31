@@ -4,29 +4,39 @@ export default function ContactForm() {
 
     const formData = new FormData(event.currentTarget);
 
-    console.log(formData)
+    console.log(formData);
 
-    // const data = {
-    //   name: formData.get("name"),
-    //   email: formData.get("email"),
-    //   inquiry: formData.get("inquiry"),
-    // };
+    const data = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      inquiry: formData.get("inquiry"),
+    };
 
-    // const res = await fetch("http://localhost:5000/contact", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify(data),
-    // });
-    // console.log("message sent");
+    try {
+      const res = await fetch(
+        "https://dala-backend.vercel.app/contact",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
 
-    // if (res.ok) {
-    //   alert("Message sent!");
-    //   event.currentTarget.reset();
-    // } else {
-    //   alert("Failed to send message");
-    // }
+      if (!res.ok) {
+        alert('Failed to send message');
+        throw new Error(`Server error: ${res.status}`);
+      }
+
+      const result = await res.json(); // if your backend returns JSON
+      alert('Message sent successfully');
+      console.log("Message sent successfully:", result);
+    } catch (err) {
+      alert('Failed to send message');
+      console.error("Failed to send message:", err);
+    }
+
   }
 
   return (
