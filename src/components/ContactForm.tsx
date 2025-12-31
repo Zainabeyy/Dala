@@ -4,6 +4,8 @@ export default function ContactForm() {
 
     const formData = new FormData(event.currentTarget);
 
+    console.log(formData)
+
     // const data = {
     //   name: formData.get("name"),
     //   email: formData.get("email"),
