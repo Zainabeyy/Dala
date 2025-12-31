@@ -46,7 +46,7 @@
 }
 
 .hero {
-  @apply bg-[url('./bg-img.webp')] bg-cover bg-center rounded-4xl py-16 xl:py-18 2xl:py-20;
+  @apply bg-[url('/bg-img.webp')] bg-cover bg-center rounded-4xl py-16 xl:py-18 2xl:py-20;
 }
 .heroHomeHeading p span {
   @apply text-blue-sharp italic;
