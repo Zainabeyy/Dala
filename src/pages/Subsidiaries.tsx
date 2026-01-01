@@ -69,8 +69,8 @@ export default function Subsidiaries() {
       <section className="flex flex-col gap-y-16 mt-16 mb-20">
         {
           // ---- subsidiaries cards ----
-          cardData.map((card) => (
-            <div className="flex flex-col justify-center items-center sm:items-start md:flex-row md:justify-start gap-x-12 gap-y-10">
+          cardData.map((card, index) => (
+            <div className="flex flex-col justify-center items-center sm:items-start md:flex-row md:justify-start gap-x-12 gap-y-10" key={index}>
               <div className="w-50 h-50 2xl:size-52 bg-blue-dark rounded-4xl flex items-center justify-center shrink-0">
                 <img
                   src={`./subsidiaries-logos/${card.img}.webp`}

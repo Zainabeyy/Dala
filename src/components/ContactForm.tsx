@@ -4,8 +4,6 @@ export default function ContactForm() {
 
     const formData = new FormData(event.currentTarget);
 
-    console.log(formData);
-
     const data = {
       name: formData.get("name"),
       email: formData.get("email"),
@@ -29,9 +27,8 @@ export default function ContactForm() {
         throw new Error(`Server error: ${res.status}`);
       }
 
-      const result = await res.json(); // if your backend returns JSON
+      await res.json();
       alert('Message sent successfully');
-      console.log("Message sent successfully:", result);
     } catch (err) {
       alert('Failed to send message');
       console.error("Failed to send message:", err);
