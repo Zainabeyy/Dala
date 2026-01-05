@@ -1,5 +1,6 @@
-import CoreValues from "../components/CoreValues";
 import VissionMission from "../components/VissionMission";
+import { aboutUsInfoCards } from "../assets/data";
+import InfoCard from "../components/InfoCard";
 
 export default function About() {
   const listData = [
@@ -103,10 +104,8 @@ export default function About() {
       <VissionMission />
 
       <section>
-        <h2 className="gradHeading">
-          Core Values
-        </h2>
-        <CoreValues />
+        <h2 className="gradHeading">Core Values</h2>
+        <InfoCard infoData={aboutUsInfoCards}/>
       </section>
     </div>
   );

@@ -1,6 +1,8 @@
-import CoreValues from "../components/CoreValues";
+import InfoCard from "../components/InfoCard";
+import { subsidieariesInfoCards } from "../assets/data";
 
 export default function Subsidiaries() {
+
   // ---- subsidiaries card data ----
 
   const cardData = [
@@ -70,7 +72,10 @@ export default function Subsidiaries() {
         {
           // ---- subsidiaries cards ----
           cardData.map((card, index) => (
-            <div className="flex flex-col justify-center items-center sm:items-start md:flex-row md:justify-start gap-x-12 gap-y-10" key={index}>
+            <div
+              className="flex flex-col justify-center items-center sm:items-start md:flex-row md:justify-start gap-x-12 gap-y-10"
+              key={index}
+            >
               <div className="w-50 h-50 2xl:size-52 bg-blue-dark rounded-4xl flex items-center justify-center shrink-0">
                 <img
                   src={`./subsidiaries-logos/${card.img}.webp`}
@@ -120,7 +125,7 @@ export default function Subsidiaries() {
         <h2 className="gradHeading">
           Investment Philosophy & Strategic Approach
         </h2>
-        <CoreValues />
+        <InfoCard infoData={subsidieariesInfoCards} />
       </section>
     </div>
   );
