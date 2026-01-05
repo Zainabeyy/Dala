@@ -5,12 +5,7 @@ export default function Footer() {
     <section className="bg-blue-light py-10 mt-20">
       <div className="cont-px flex flex-col min-[995px]:flex-row justify-between gap-14">
         <div className="flex-1">
-          <img src="logo.svg" alt="Dala logo" className="h-auto w-30" />
-          <img
-            src="arabic-txt.svg"
-            alt="arabic text 'دالا القابضة'"
-            className="h-auto w-31 mt-3"
-          />
+          <img src="logo-with-arabic.svg" alt="Dala logo" className="h-auto w-30" />
           <p className="text-xs leading-[150%] max-w-[55ch] my-6">
             Guided by Saudi Arabia’s Vision 2030, DALA Holding contributes to
             national transformation by promoting localization, innovation,

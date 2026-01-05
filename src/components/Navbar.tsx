@@ -24,14 +24,14 @@ export default function Navbar() {
         {/* Logo */}
         <NavLink to="/">
           <img
-            src="logo.svg"
+            src="logo-with-arabic.svg"
             alt="Dala logo"
-            className="h-auto max-w-16 sm:max-w-18 hover:scale-104 transition-all duration-200"
+            className="h-auto max-w-16 sm:max-w-19 hover:scale-104 transition-all duration-200"
           />
         </NavLink>
 
         {/* Desktop Menu */}
-        <div className="hidden w-full min-[30rem]:flex justify-center font-bold uppercase text-xs sm:text-sm gap-x-8 xl:gap-x-14">
+        <div className="hidden w-full xs:flex justify-center font-bold uppercase text-xs sm:text-sm gap-x-8 xl:gap-x-14">
           {navData.map((item, index) => (
             <NavLink
               to={item.link}
