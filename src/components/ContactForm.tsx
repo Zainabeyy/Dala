@@ -28,25 +28,6 @@ export default function ContactForm() {
       });
 
       const web3Data = await web3Response.json();
-
-    
-      const backendRes = await fetch(
-        "https://dala-backend.vercel.app/contact",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data),
-        }
-      );
-
-      if (!backendRes.ok) {
-        setResult("Failed to save to database");
-        throw new Error(`Server error: ${backendRes.status}`);
-      }
-
-      await backendRes.json();
       
       if (web3Data.success) {
         setResult("Message sent successfully!");
