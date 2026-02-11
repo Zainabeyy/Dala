@@ -2,7 +2,7 @@
 
 export default function VissionMission() {
   return (
-    <div>
+    <div className="mt-20">
       <section className="imgTextSec">
         <div className="lg:max-w-110 2xl:max-w-3xl">
           <h2 className="gradHeading mb-8 2xl:mb-14">Vision</h2>

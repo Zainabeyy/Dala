@@ -41,10 +41,12 @@ export default function About() {
         />
       </section>
 
+      {/* ----- Leadership ----- */}
+
       <section className="mt-20">
         <h2 className="gradHeading mb-10">Leadership</h2>
         <div className="bg-blue-light rounded-3xl overflow-hidden flex flex-col md:flex-row md:h-110.5 xl:h-85.5 ">
-          <div className="md:h-110.5 xl:h-85.5 xl:w-76.5 min-w-60 h-60 overflow-hidden shrink xl:shrink-0">
+          <div className="mainPersonImg">
             <picture>
               <source
                 srcSet="chairman-sm.webp"
@@ -83,20 +85,36 @@ export default function About() {
           </div>
         </div>
 
-        <div className="bg-blue-light rounded-3xl p-8 mt-6">
-          <p className="font-bold text-2xl">Abdullah Ibn Nasser Almudarra</p>
-          <p className="font-bold mt-4">Co-Founder & Vice Chairman</p>
-          <div className="text-xs leading-[175%] mt-6">
-            <p>
-              Abdullah Ibn Nasser Almudarra brings extensive experience in
-              business development, investment strategy, and partnership
-              formation.
-            </p>
-            <p>
-              As Co-Founder and Vice Chairman, he plays a pivotal role in
-              shaping DALA’s growth strategy, fostering strategic alliances, and
-              driving operational excellence across its diverse portfolio.
-            </p>
+        <div className="mt-6 bg-blue-light rounded-3xl overflow-hidden flex flex-col md:flex-row md:h-110.5 xl:h-85.5 ">
+          <div className="mainPersonImg">
+            <picture>
+              <source
+                srcSet="vice-chairman-sm.webp"
+                media="(max-width: 767px)"
+                type="image/webp"
+              />
+              <img
+                src="vice-chairman.webp"
+                alt="chairman"
+                className="h-full object-cover object-center w-full"
+              />
+            </picture>
+          </div>
+          <div className="px-8 py-6">
+            <p className="font-bold text-2xl">Abdullah Ibn Nasser Almudarra</p>
+            <p className="font-bold mt-4">Co-Founder & Vice Chairman</p>
+            <div className="text-xs leading-[175%] mt-6">
+              <p>
+                Abdullah Ibn Nasser Almudarra brings extensive experience in
+                business development, investment strategy, and partnership
+                formation.
+              </p>
+              <p>
+                As Co-Founder and Vice Chairman, he plays a pivotal role in
+                shaping DALA’s growth strategy, fostering strategic alliances,
+                and driving operational excellence across its diverse portfolio.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -105,7 +123,7 @@ export default function About() {
 
       <section>
         <h2 className="gradHeading">Core Values</h2>
-        <InfoCard infoData={aboutUsInfoCards}/>
+        <InfoCard infoData={aboutUsInfoCards} />
       </section>
     </div>
   );
